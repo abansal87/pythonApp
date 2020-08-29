@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+   <body style="margin-left:40%; background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm145-jj-013-b-l_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=487ae634f7cf9fa7d1b07874c0eeb4c2')">      <table border = 1>
+               <tr>
+                  <th style="background-color: grey;">Multiplication</th>
+                  <th style="background-color: grey;">Answers</th>
+                  <th style="background-color: grey;">Correct Answers</th>
+               <tr>
+         {% for key, value in result.items() %}
+            {% if key != 'Name' %}
+                     <th> {{ key }} </th>
+                     {% if (key == '10 × 1' and value == '10') or (key == '10 × 2' and value == '20') or (key == '10 × 3' and value == '30') or (key == '10 × 4' and value == '40') or (key == '10 × 5' and value == '50') or (key == '10 × 6' and value == '60') or (key == '10 × 7' and value == '70') or (key == '10 × 8' and value == '80') or (key == '10 × 9' and value == '90') or (key == '10 × 10' and value == '100') %}
+                        <td style="background-color: green;"> {{ value }} </td>
+                     {% endif %}
+                     {% if (key == '10 × 1' and value != '10') or (key == '10 × 2' and value != '20') or (key == '10 × 3' and value != '30') or (key == '10 × 4' and value != '40') or (key == '10 × 5' and value != '50') or (key == '10 × 6' and value != '60') or (key == '10 × 7' and value != '70') or (key == '10 × 8' and value != '80') or (key == '10 × 9' and value != '90') or (key == '10 × 10' and value != '100') %}
+                        <td style="background-color: red;"> {{ value }} </td>
+                     {% endif %}
+                     <td>
+                        {% if key == '10 × 1' %}
+                           10
+                        {% endif %}
+                        {% if key == '10 × 2' %}
+                           20
+                        {% endif %}
+                        {% if key == '10 × 3' %}
+                           30
+                        {% endif %}
+                        {% if key == '10 × 4' %}
+                           40
+                        {% endif %}
+                        {% if key == '10 × 5' %}
+                           50
+                        {% endif %}
+                        {% if key == '10 × 6' %}
+                           60
+                        {% endif %}
+                        {% if key == '10 × 7' %}
+                           70
+                        {% endif %}
+                        {% if key == '10 × 8' %}
+                           80
+                        {% endif %}
+                        {% if key == '10 × 9' %}
+                           90
+                        {% endif %}
+                        {% if key == '10 × 10' %}
+                           100
+                        {% endif %}
+                     </td>
+                  </tr>
+            {% endif %}
+         {% endfor %}
+      </table>
+      <table>
+         <th>
+      <h2>Excellent work!!</h2></th>
+   </table>
+   </body>
+</html>

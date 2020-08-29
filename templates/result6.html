@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+   <body style="margin-left:40%; background-image: url('https://lh3.googleusercontent.com/proxy/YxGy2WzH03fN86cvHXo2cQcJXzY4MIwjc--GgRFSgxo_fb86UUa_pNWBhYm8La-iPGni_6cBknA_xa64qeNjuv6bE38CrwvNfCdUhlWqDeHf93wm5ZEUf3G7ocxF3EsJ1Qknx3Htd0dX2xd0uZLMYfgpZmk')">
+      {% for key, value in result.items() %}
+         {% if key == 'Name' %}
+            <h3 style="color: purple;"> Hello {{ value }},</h3>
+         {% endif %}
+      {% endfor %}
+      <table border = 1>
+               <tr>
+                  <th style="background-color: grey;">Multiplication</th>
+                  <th style="background-color: grey;">Answers</th>
+                  <th style="background-color: grey;">Correct Answers</th>
+               <tr>
+         {% for key, value in result.items() %}
+            {% if key != 'Name' %}
+                     <th> {{ key }} </th>
+                     {% if (key == '6 × 1' and value == '6') or (key == '6 × 2' and value == '12') or (key == '6 × 3' and value == '18') or (key == '6 × 4' and value == '24') or (key == '6 × 5' and value == '30') or (key == '6 × 6' and value == '36') or (key == '6 × 7' and value == '42') or (key == '6 × 8' and value == '48') or (key == '6 × 9' and value == '54') or (key == '6 × 10' and value == '60') %}
+                        <td style="background-color: green;"> {{ value }} </td>
+                     {% endif %}
+                     {% if (key == '6 × 1' and value != '6') or (key == '6 × 2' and value != '12') or (key == '6 × 3' and value != '18') or (key == '6 × 4' and value != '24') or (key == '6 × 5' and value != '30') or (key == '6 × 6' and value != '36') or (key == '6 × 7' and value != '42') or (key == '6 × 8' and value != '48') or (key == '6 × 9' and value != '54') or (key == '6 × 10' and value != '60') %}
+                        <td style="background-color: red;"> {{ value }} </td>
+                     {% endif %}
+                     <td>
+                        {% if key == '6 × 1' %}
+                           6
+                        {% endif %}
+                        {% if key == '6 × 2' %}
+                           12
+                        {% endif %}
+                        {% if key == '6 × 3' %}
+                           18
+                        {% endif %}
+                        {% if key == '6 × 4' %}
+                           24
+                        {% endif %}
+                        {% if key == '6 × 5' %}
+                           30
+                        {% endif %}
+                        {% if key == '6 × 6' %}
+                           36
+                        {% endif %}
+                        {% if key == '6 × 7' %}
+                           42
+                        {% endif %}
+                        {% if key == '6 × 8' %}
+                           48
+                        {% endif %}
+                        {% if key == '6 × 9' %}
+                           54
+                        {% endif %}
+                        {% if key == '6 × 10' %}
+                           60
+                        {% endif %}
+                     </td>
+                  </tr>
+            {% endif %}
+         {% endfor %}
+      </table>
+      <form action = "http://localhost:5000/result7" method = "POST">
+         <h2 style="color: black;">What is your favourite song?
+         </h2>
+         <input type = "text" name = "class" /><br>
+         <h3>Please fill the below tables.</h3>
+         <table border="1">
+         <th style="background-color: grey">Table of 7: </th>
+         <tr>
+            <td>
+               <h3>7 × 1 = <input type = "text" name = "7 × 1" /></h3>
+               <h3>7 × 2 = <input type = "text" name = "7 × 2" /></h3>
+               <h3>7 × 3 = <input type = "text" name = "7 × 3" /></h3>
+               <h3>7 × 4 = <input type = "text" name = "7 × 4" /></h3>
+               <h3>7 × 5 = <input type = "text" name = "7 × 5" /></h3>
+               <h3>7 × 6 = <input type = "text" name = "7 × 6" /></h3>
+               <h3>7 × 7 = <input type = "text" name = "7 × 7" /></h3>
+               <h3>7 × 8 = <input type = "text" name = "7 × 8" /></h3>
+               <h3>7 × 9 = <input type = "text" name = "7 × 9" /></h3>
+               <h3>7 × 10 =<input type = "text" name = "7 × 10" /></h3>
+            </td>
+         </tr>
+         </table>
+         <h3><input type = "submit" value = "Submit" /></h3>
+      </form>
+   </body>
+</html>

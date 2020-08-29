@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+   <body style="margin-left:40%; background-image: url('https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&w=1000&q=80')">
+      {% for key, value in result.items() %}
+         {% if key == 'Name' %}
+            <h3 style="color: purple;"> Hello {{ value }},</h3>
+         {% endif %}
+      {% endfor %}
+      <table border = 1>
+               <tr>
+                  <th style="background-color: grey;">Multiplication</th>
+                  <th style="background-color: grey;">Answers</th>
+                  <th style="background-color: grey;">Correct Answers</th>
+               <tr>
+         {% for key, value in result.items() %}
+            {% if key != 'Name' %}
+                     <th> {{ key }} </th>
+                     {% if (key == '2 × 1' and value == '2') or (key == '2 × 2' and value == '4') or (key == '2 × 3' and value == '6') or (key == '2 × 4' and value == '8') or (key == '2 × 5' and value == '10') or (key == '2 × 6' and value == '12') or (key == '2 × 7' and value == '14') or (key == '2 × 8' and value == '16') or (key == '2 × 9' and value == '18') or (key == '2 × 10' and value == '20') %}
+                        <td style="background-color: green;"> {{ value }} </td>
+                     {% endif %}
+                     {% if (key == '2 × 1' and value != '2') or (key == '2 × 2' and value != '4') or (key == '2 × 3' and value != '6') or (key == '2 × 4' and value != '8') or (key == '2 × 5' and value != '10') or (key == '2 × 6' and value != '12') or (key == '2 × 7' and value != '14') or (key == '2 × 8' and value != '16') or (key == '2 × 9' and value != '18') or (key == '2 × 10' and value != '20') %}
+                        <td style="background-color: red;"> {{ value }} </td>
+                     {% endif %}
+                     <td>
+                        {% if key == '2 × 1' %}
+                           2
+                        {% endif %}
+                        {% if key == '2 × 2' %}
+                           4
+                        {% endif %}
+                        {% if key == '2 × 3' %}
+                           6
+                        {% endif %}
+                        {% if key == '2 × 4' %}
+                           8
+                        {% endif %}
+                        {% if key == '2 × 5' %}
+                           10
+                        {% endif %}
+                        {% if key == '2 × 6' %}
+                           12
+                        {% endif %}
+                        {% if key == '2 × 7' %}
+                           14
+                        {% endif %}
+                        {% if key == '2 × 8' %}
+                           16
+                        {% endif %}
+                        {% if key == '2 × 9' %}
+                           18
+                        {% endif %}
+                        {% if key == '2 × 10' %}
+                           20
+                        {% endif %}
+                     </td>
+                  </tr>
+            {% endif %}
+         {% endfor %}
+      </table>
+      <form action = "http://localhost:5000/result3" method = "POST">
+         <h2 style="color: black;">In which class do you read {% for key, value in result.items() %}
+               {% if key == 'Name' %}
+                  {{ value }} ?
+               {% endif %}
+            {% endfor %}
+         </h2>
+         <input type = "text" name = "class" /><br>
+         <h3>Please fill the below tables.</h3>
+         <table border="1">
+         <th style="background-color: grey">Table of 3: </th>
+         <tr>
+            <td>
+               <h3>3 × 1 = <input type = "text" name = "3 × 1" /></h3>
+               <h3>3 × 2 = <input type = "text" name = "3 × 2" /></h3>
+               <h3>3 × 3 = <input type = "text" name = "3 × 3" /></h3>
+               <h3>3 × 4 = <input type = "text" name = "3 × 4" /></h3>
+               <h3>3 × 5 = <input type = "text" name = "3 × 5" /></h3>
+               <h3>3 × 6 = <input type = "text" name = "3 × 6" /></h3>
+               <h3>3 × 7 = <input type = "text" name = "3 × 7" /></h3>
+               <h3>3 × 8 = <input type = "text" name = "3 × 8" /></h3>
+               <h3>3 × 9 = <input type = "text" name = "3 × 9" /></h3>
+               <h3>3 × 10 =<input type = "text" name = "3 × 10" /></h3>
+            </td>
+         </tr>
+         </table>
+         <h3><input type = "submit" value = "Submit" /></h3>
+      </form>
+   </body>
+</html>
